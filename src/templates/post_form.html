@@ -2,10 +2,20 @@
 
 {% block content %}
 
-<h1>Form</h1>
-<form method="POST" action="">{% csrf_token %}
-{{form.as_p}}
-<input type="submit" value="Create Post"/>
-</form>
+<div class="box box-warning">
+    <div class="box-header with-border">
+        <h3 class="box-title">Form</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <form method="POST" action="">{% csrf_token %} 
+	        {{form.as_p}}
+	        <input type="submit" class="btn btn-info" value="Create Post" />
+        </form>
+    </div>
+</div>
 
 {% endblock content %}
+
+
+

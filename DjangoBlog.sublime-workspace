@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"url",
+				"urls"
+			],
+			[
+				"con",
+				"conf"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"ht",
+				"HttpResponse"
+			],
+			[
+				"from",
+				"form"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"P",
+				"POST"
+			],
+			[
+				"Pos",
+				"Post"
+			],
+			[
+				"for",
+				"forms"
+			],
+			[
+				"post",
+				"Post"
+			],
+			[
+				"po",
+				"post_delete"
+			],
+			[
+				"j",
+				"join"
+			],
+			[
 				"na",
 				"name\tconst"
 			],
@@ -15,6 +63,63 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/posts/views.py",
+			"settings":
+			{
+				"buffer_size": 1575,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Djangoblog/settings.py",
+			"settings":
+			{
+				"buffer_size": 3418,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Djangoblog/urls.py",
+			"settings":
+			{
+				"buffer_size": 1073,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{% load staticfiles %}\n<!DOCTYPE html>\n<html>\n<head>\n\t<title>{% block head_title %}Badri Blog{% endblock head_title %}</title>\n\t<link rel=\"stylesheet\" type=\"text/css\" href='{% static \"css/base.css\" %}'>\n\t\t<link rel=\"stylesheet\" href=\"{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}\" type='text/css'/>\n\n    <!-- Font Awesome -->\n    <link rel=\"stylesheet\" href=\"{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}\" type='text/css'/>\n    <!-- Ionicons -->\n    <link rel=\"stylesheet\" href=\"{% static 'bower_components/Ionicons/css/ionicons.min.css' %}\" type='text/css'/>\n    <!-- Theme style -->\n    <link rel=\"stylesheet\" href=\"{% static 'dist/css/AdminLTE.min.css' %}\" type='text/css'/>\n    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter\n        page. However, you can choose any other skin. Make sure you\n        apply the skin class to the body tag so the changes take effect. -->\n    <link rel=\"stylesheet\" href=\"{% static 'dist/css/skins/skin-blue.min.css' %}\" type='text/css'/>\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n\n  <!-- Google Font -->\n  <link rel=\"stylesheet\"\n        href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic\">\n\n\n</head>\n<body class=\"hold-transition skin-blue sidebar-mini\">\n\n      <!-- Sidebar Menu -->\n      <ul class=\"sidebar-menu\" data-widget=\"tree\">\n        <li class=\"header\">HEADER</li>\n        <!-- Optionally, you can add icons to the links -->\n        <li class=\"active\"><a href=\"#\"><i class=\"fa fa-link\"></i> <span>Link</span></a></li>\n        <li><a href=\"#\"><i class=\"fa fa-link\"></i> <span>Another Link</span></a></li>\n        <li class=\"treeview\">\n          <a href=\"#\"><i class=\"fa fa-link\"></i> <span>Multilevel</span>\n            <span class=\"pull-right-container\">\n                <i class=\"fa fa-angle-left pull-right\"></i>\n              </span>\n          </a>\n          <ul class=\"treeview-menu\">\n            <li><a href=\"#\">Link in level 2</a></li>\n            <li><a href=\"#\">Link in level 2</a></li>\n          </ul>\n        </li>\n      </ul>\n      <!-- /.sidebar-menu -->\n    </section>\n    <!-- /.sidebar -->\n  </aside>\t\n\n\n{% include \"messages_display.html\" %}\n<div class=\"container\">\n{% block content %}{% endblock content %}\t\n</div>\n\n\n<!-- Main Footer -->\n<footer class=\"main-footer\">\n<!-- To the right -->\n<div class=\"pull-right hidden-xs\">\n  Anything you want\n</div>\n<!-- Default to the left -->\n<strong>Copyright &copy; 2017 <a href=\"#\">Company</a>.</strong> All rights reserved.\n</footer>\n\n\n<!-- REQUIRED JS SCRIPTS -->\n\n<!-- jQuery 3 -->\n<script src=\"{% static 'bower_components/jquery/dist/jquery.min.js' %}\"></script>\n<!-- Bootstrap 3.3.7 -->\n<script src=\"{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}\"></script>\n<!-- AdminLTE App -->\n<script src=\"{% static 'dist/js/adminlte.min.js' %}\"></script>\n\n<!-- Optionally, you can add Slimscroll and FastClick plugins.\n     Both of these plugins are recommended to enhance the\n     user experience. -->\t\n</body>\n</html>",
+			"file": "src/templates/base.html",
+			"file_size": 2499,
+			"file_write_time": 131440409310000000,
+			"settings":
+			{
+				"buffer_size": 3372,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/post_list.html",
+			"settings":
+			{
+				"buffer_size": 309,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/post_detail.html",
+			"settings":
+			{
+				"buffer_size": 320,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -54,8 +159,24 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog"
+	],
 	"file_history":
 	[
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/templates/messages_display.html",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/urls.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/templates/post_form.html",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/templates/post_detail.html",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/templates/index.html",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/models.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/forms.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/Djangoblog/urls.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/Djangoblog/settings.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/templates/posts/index.html",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/admin.py",
+		"/Users/bprudhvi/Documents/git_dir/DjangoBlog/src/posts/views.py",
 		"/Users/bprudhvi/Dropbox (Snap Finance)/RTO Analytics/Analytics/badri/Cronjobs/Collections/copy_files_to_servers.sh",
 		"/Users/bprudhvi/Documents/git_dir/angular_dev/tsSetup/main.ts",
 		"/Users/bprudhvi/Downloads/AdminLTE-2.4.0-rc/starter.html",
@@ -87,7 +208,7 @@
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -102,6 +223,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"index",
 			"library(future)",
 			"TRUE",
 			"AR.rda",
@@ -131,8 +253,182 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/posts/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 122.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Djangoblog/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3285,
+								3285
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2147.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Djangoblog/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/templates/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1636,
+								2500
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/templates/post_list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/templates/post_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -217,7 +513,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 206.0,
+	"side_bar_width": 141.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

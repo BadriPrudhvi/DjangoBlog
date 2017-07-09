@@ -1,14 +1,34 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<h1 class="text-red">All Posts</h1>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="timeline">
+    {% for obj in object_list %}
 
-{% block content %}
-
-<h1>{{title}} is Working!</h1>
-{% for obj in object_list %}
-<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <br/>
-{{ obj.content }} <br/>
-{{ obj.timestamp }} <br/>
-{{ obj.updated }} <br/>
-{{ obj.id }} <br/> <br/>
-{% endfor %} 
-
-{% endblock content %}	
+            <!-- timeline time label -->
+            <li class="time-label">
+                  <span class="bg-green">
+                    {{ obj.timestamp | timesince}} ago
+                  </span>
+            </li>
+            <!-- /.timeline-label -->
+            <li>
+                <i class="fa fa-clock-o bg-blue"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> {{ obj.timestamp}}</span>
+                    <h3 class="timeline-header"><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> </h3>
+                    <div class="timeline-body">
+                        {{ obj.content|linebreaks|truncatechars:140 }}
+                    </div>
+                    <div class="timeline-footer">
+                        <a href='{{ obj.get_absolute_url }}' class="btn btn-warning btn-Default">View</a>
+                    </div>
+                </div>
+            </li>
+<!--     {% cycle "" "</div><div class='row'>" %} 
+ -->    
+ {% endfor %}
+         </ul>
+    </div>
+</div>
+{% endblock content %}
