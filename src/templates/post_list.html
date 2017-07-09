@@ -20,6 +20,9 @@
                     <div class="timeline-body">
                         {{ obj.content|linebreaks|truncatechars:140 }}
                     </div>
+                    {% if obj.image %}
+                    <img src='{{ obj.image.url }}' class='img-responsive' />
+                    {% endif %}
                     <div class="timeline-footer">
                         <a href='{{ obj.get_absolute_url }}' class="btn btn-warning btn-Default">View</a>
                     </div>
@@ -30,5 +33,19 @@
  {% endfor %}
          </ul>
     </div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span> {% if object_list.has_next %}
+    <a href="?page={{ object_list.next_page_number }}">next</a> {% endif %}
+    </span>
+</div>
+
 </div>
 {% endblock content %}

@@ -29,6 +29,9 @@
         <div class="box-body">
             <!-- post text -->
             <p>{{ instance.content|linebreaks }}</p>
+            {% if instance.image %}
+             <img src='{{ instance.image.url }}' class='img-responsive' />
+             {% endif %}
         </div>
     </div>
     <!-- /.box -->
