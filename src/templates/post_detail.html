@@ -21,7 +21,9 @@
                 <span class="description"> Time : {{ instance.timestamp }}</span>
             <!-- /.user-block -->
             <div class="box-tools">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <a href="/posts/{{instance.id}}/edit"><button type="button" class="btn btn-box-tool" data-widget="edit"><i class="fa fa-edit"></i></button></a>
+                <a href="/posts/{{instance.id}}/delete"><button type="button" class="btn btn-box-tool" data-widget="edit"><i class="fa fa-remove"></i></button></a>
             </div>
             <!-- /.box-tools -->
         </div>

@@ -4,7 +4,7 @@ from django.conf import settings
 
 # Create your models here.
 def upload_location(instance, filename):
-	return "%s/%s" %{instance.id, filename}
+	return "{0}/{1}".format(instance.id, filename)
 
 class Post(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,default=1)

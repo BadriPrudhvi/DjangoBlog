@@ -29,7 +29,8 @@ def post_list(request):
 
 def post_create(request):
 	if not request.user.is_staff or not request.user.is_superuser:
-		raise Http404
+		context = { "message": "Please Login and Try Again!!"} 
+		return render(request, "404_page.html", context)
 	form = PostForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		instance = form.save(commit=False)
@@ -54,7 +55,7 @@ def post_detail(request, id):
 
 def post_update(request, id):
 	if not request.user.is_staff or not request.user.is_superuser:
-		raise Http404
+		return render(request, "404_page.html")
 	instance = get_object_or_404(Post, id=id)
 	form = PostForm(request.POST or None,
                     request.FILES or None, instance=instance)
@@ -73,7 +74,7 @@ def post_update(request, id):
 
 def post_delete(request, id=None):
 	if not request.user.is_staff or not request.user.is_superuser:
-		raise Http404
+		return render(request, "404_page.html")
 	instance = get_object_or_404(Post, id=id)
 	instance.delete()
 	messages.success(request, "Successfully Deleted")
