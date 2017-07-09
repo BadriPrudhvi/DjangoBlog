@@ -17,7 +17,8 @@
                 <div class="timeline-item">
                     <span class="time"><i class="fa fa-clock-o"></i> {{ obj.timestamp}}</span>
                     <h3 class="timeline-header"><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> </h3>
-                    <div class="timeline-body">
+                     <h4 class="timeline-header"><p>Author : {{ obj.user}}</p> </h4>
+                    <div class="timeline-body"> Posted : 
                         {{ obj.content|linebreaks|truncatechars:140 }}
                     </div>
                     {% if obj.image %}

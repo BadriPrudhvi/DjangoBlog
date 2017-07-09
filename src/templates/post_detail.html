@@ -17,8 +17,8 @@
         <div class="box-header with-border">
             
                 <span class="username"><h2>{{ instance.title }}</h2></span>
-                <br>
-                <span class="description">{{ instance.timestamp }}</span>
+                <span class="username"><p>Author : {{ instance.user}}</p> </span>
+                <span class="description"> Time : {{ instance.timestamp }}</span>
             <!-- /.user-block -->
             <div class="box-tools">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -28,7 +28,7 @@
         <!-- /.box-header -->
         <div class="box-body">
             <!-- post text -->
-            <p>{{ instance.content|linebreaks }}</p>
+            <p>Posted : {{ instance.content|linebreaks }}</p>
             {% if instance.image %}
              <img src='{{ instance.image.url }}' class='img-responsive' />
              {% endif %}
