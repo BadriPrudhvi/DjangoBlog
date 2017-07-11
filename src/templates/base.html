@@ -24,7 +24,6 @@
   <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
 
 <body class="hold-transition skin-blue layout-top-nav">
     <header class="main-header">
@@ -95,6 +94,10 @@
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+
+     {% block head_extra %} {% endblock head_extra %}
+     </head>
+
 </body>
 
 </html>
