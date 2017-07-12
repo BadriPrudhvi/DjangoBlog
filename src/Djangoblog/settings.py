@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     #local
     'posts',
     # third party
+    'crispy_forms',
     'pagedown',
-    'rest_framework'
+    'rest_framework',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +58,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGIN_URL = '/login/'
 ROOT_URLCONF = 'Djangoblog.urls'
 
 TEMPLATES = [

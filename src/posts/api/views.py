@@ -26,6 +26,8 @@ from rest_framework.filters import(
 	OrderingFilter,
 	)
 
+from .pagination import PostLimitOffsetPagination, PostPageNumberPagination
+
 class PostCreateAPIView(CreateAPIView):
 	queryset = Post.objects.all()
 	serializer_class = PostCreateSerializer
@@ -54,6 +56,7 @@ class PostListAPIView(ListAPIView):
 	serializer_class = PostListSerializer
 	filter_backends = [SearchFilter]
 	search_fields = ['title','content']
+	pagination_class = PostPageNumberPagination
 
 	def get_queryset(self, *args, **kwargs):
 		queryset_list = Post.objects.all()

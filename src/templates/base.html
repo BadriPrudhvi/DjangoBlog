@@ -25,79 +25,91 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-<body class="hold-transition skin-blue layout-top-nav">
-    <header class="main-header">
-        <nav class="navbar navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a  href = "/posts/"class="navbar-brand"><b> BADRI </b> BLOG</a>
-                    <a  href = "/posts/create/"class="navbar-brand"> New Post</a>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
+    <body class="hold-transition skin-blue layout-top-nav">
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/" class="navbar-brand"><b> BADRI </b> BLOG</a>
+                        {% if request.user.is_authenticated %}
+                        <a href="/create/" class="navbar-brand"> New Post</a>
+                        {% endif %}
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account Menu -->
+                            {% if not request.user.is_authenticated %}
+                            <li>
+                                <a href="/login/">Login</a>
+                            </li>
+                            <li>
+                                <a href="/register/">Register</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="/logout/">Logout</a>
+                            </li>
+                            {% endif %}
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img src="/static/dist/img/avatar5.png" class="user-image" alt="User Image">
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <span class="hidden-xs">Badri Prudhvi</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="/static/dist/img/avatar5.png" class="img-circle" alt="User Image">
+                                        <p>
+                                            Badri Prudhvi - Data Scientist
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account Menu -->
-                        <li class="dropdown user user-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- The user image in the navbar-->
-                                <img src="/static/dist/img/avatar5.png" class="user-image" alt="User Image">
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Badri Prudhvi</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
-                                <li class="user-header">
-                                    <img src="/static/dist/img/avatar5.png" class="img-circle" alt="User Image">
-                                    <p>
-                                        Badri Prudhvi - Data Scientist
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+            </nav>
+        </header>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                {% include "messages_display.html" %}
+                <div class="container">
+                    {% block content %}{% endblock content %}
                 </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content">
-            {% include "messages_display.html" %}
-            <div class="container">
-                {% block content %}{% endblock content %}
-            </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Anything you want
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
-    </footer>
-    <!-- REQUIRED JS SCRIPTS -->
-    <!-- jQuery 3 -->
-    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <!-- AdminLTE App -->
-    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                Anything you want
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
+        </footer>
+        <!-- REQUIRED JS SCRIPTS -->
+        <!-- jQuery 3 -->
+        <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <!-- AdminLTE App -->
+        <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+        <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
-
-     {% block head_extra %} {% endblock head_extra %}
-     </head>
-
+        {% block head_extra %} {% endblock head_extra %}
+</head>
 </body>
 
 </html>
