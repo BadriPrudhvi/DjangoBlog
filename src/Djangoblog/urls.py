@@ -28,6 +28,7 @@ from accounts.views import (
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/posts/', include("posts.api.urls", namespace='posts-api')),
+    url(r'^api/users/', include("accounts.api.urls", namespace='users-api')),
     url(r'^login/', login_view ,name='login'),
     url(r'^register/', register_view ,name='register'),
     url(r'^logout/', logout_view ,name='logout'),
