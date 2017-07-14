@@ -39,11 +39,12 @@ class PostCreateAPIView(CreateAPIView):
 class PostDetailAPIView(RetrieveAPIView):
 	queryset = Post.objects.all()
 	serializer_class = PostDetailSerializer
+	permission_classes = [AllowAny]
 
 class PostUpdateAPIView(RetrieveUpdateAPIView):
 	queryset = Post.objects.all()
 	serializer_class = PostDetailSerializer
-	permission_classes = [IsAuthenticatedOrReadOnly]
+	permission_classes = [IsOwnerOrReadOnly]
 
 	def perform_update(self, serializer):
 		serializer.save(user=self.request.user)
@@ -51,12 +52,14 @@ class PostUpdateAPIView(RetrieveUpdateAPIView):
 class PostDeleteAPIView(DestroyAPIView):
 	queryset = Post.objects.all()
 	serializer_class = PostDetailSerializer
+	permission_classes = [IsOwnerOrReadOnly]
 
 class PostListAPIView(ListAPIView):
 	serializer_class = PostListSerializer
 	filter_backends = [SearchFilter]
 	search_fields = ['title','content']
 	pagination_class = PostPageNumberPagination
+	permission_classes = [AllowAny]
 
 	def get_queryset(self, *args, **kwargs):
 		queryset_list = Post.objects.all()
