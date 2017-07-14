@@ -151,6 +151,7 @@ REST_FRAMEWORK = {
     # )
     'DEFAULT_AUTHENTICATION_CLASSES': (
     'rest_framework.authentication.SessionAuthentication',
+    'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     # 'rest_framework.authentication.BasicAuthentication'
     ),
 
@@ -158,6 +159,17 @@ REST_FRAMEWORK = {
     'rest_framework.permissions.IsAuthenticatedOrReadOnly',
         )
 }
+
+
+'''
+curl -X POST -d "username=badri&password=django123" http://127.0.0.1:8000/api/auth/token/
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJhZHJpIiwiZXhwIjoxNTAwMDEyODQ3LCJ1c2VyX2lkIjoxLCJlbWFpbCI6IiJ9.QgHpOkNEfz56XhJx7lddqCTlr_hpkJWEnUNCxW_fcN8
+
+ curl http://127.0.0.1:8000/api/posts/
+
+'''
 
 
 

@@ -28,6 +28,9 @@ from rest_framework.filters import(
 
 from .pagination import PostLimitOffsetPagination, PostPageNumberPagination
 
+from .permissions import IsOwnerOrReadOnly
+
+
 class PostCreateAPIView(CreateAPIView):
 	queryset = Post.objects.all()
 	serializer_class = PostCreateSerializer
